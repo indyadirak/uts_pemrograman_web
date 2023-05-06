@@ -1,13 +1,16 @@
-<!doctype html>
-    <title>
-        halaman login
-    </title>
+<!doctype>
+<html>
     <link rel="stylesheet" type="text/css" href="../uts_pemrograman_web/css/halaman_login.css">
     <?php
         include("conn.php");
     ?>
+    <head>
+        <title>
+            halaman login
+        </title>
+    </head>
     <body>
-        <form action="">
+        <form method="post" action="profile.php">
             <table cellspacing="10">
                 <tr>
                     <td colspan="3">
@@ -39,21 +42,23 @@
                                 $username = $_POST["username"];
                                 $password = $_POST["password"];
                                 $hasil = mysqli_query($connect,"select * from account where username = '$username'");
-                                echo "test";
-                                echo $hasil;
-                                if(mysqli_num_rows($hasil) === 1)
+                                if(mysqli_num_rows($hasil))
                                 {
-                                    $row = mysqli_fetch_assoc($hasil);
+                                    $row = mysqli_fetch_assoc($hasil); //digunakan untuk mengambil baris hasil sebagai array asosiatif.
                                     
-                                    if(password_verify($password, $row["password"]))
+                                    if(password_verify($password, $row["password"])) //sebagai Decrypt dan pembanding;
                                     {
-                                        header("location: login.php?username=$username");
+                                        header("location: profile.php?username=$username");
 	                                    exit;
+                                    }
+                                    else
+                                    {
+                                        echo "password anda salah";
                                     }
                                 }
                                 else
                                 {
-                                    echo "username salah";
+                                    echo "username anda salah";
                                 }
                             }
                         ?>
