@@ -14,7 +14,7 @@
         </div>
 
         <div class="gambar">
-            <img src="image/halaman_pertama/profile.jpg" alt="image" style="width: 200px; height: 200px; border-radius: 60%;border-style: solid; border-width: 10px; border-color: white; border-radius: 60%;">
+            <img src="image/halaman_pertama/profile.jpg" alt="image" style="width: 200px; height: 200px; border-radius: 60%;border-style: solid; border-width: 10px; border-color: white;">
         </div>
 
         <div class="nama">

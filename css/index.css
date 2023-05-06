@@ -5,15 +5,6 @@
     background-size: cover;   
 }
 
-/* .bagian_atas
-{
-    background-color: bisque;
-    position: fixed;
-    top: 0px;
-    width: 50%;
-    left: 0px;
-
-} */
 .gambar
 {
     position: fixed;
@@ -36,8 +27,8 @@
     border-color: white;
     left: 750px;
     top: 420px;
-    width: 300px;
-    height: 60px;
+    width: 300px; /*lebar */
+    height: 60px; /*panjang*/
     border-style: solid;
     border-width: 3px;
     border-color: white;

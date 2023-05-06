@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            profile
+        </title>
+    </head>
+    <body>
+        <table>
+            <>
+                <td>
+                    username
+                </td>
+                <td>
+                    : 
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>

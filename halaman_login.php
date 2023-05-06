@@ -7,7 +7,7 @@
         include("conn.php");
     ?>
     <body>
-        <form>
+        <form action="">
             <table cellspacing="10">
                 <tr>
                     <td colspan="3">
@@ -28,9 +28,40 @@
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center"><button type="submit" name="submit">Login !</button></td>
+                    <td colspan="3" align="center"><button type="submit" name="login">login</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+        
+                        <?php
+                            if(isset($_POST["login"]))
+                            {
+                                $username = $_POST["username"];
+                                $password = $_POST["password"];
+                                $hasil = mysqli_query($connect,"select * from account where username = '$username'");
+                                echo "test";
+                                echo $hasil;
+                                if(mysqli_num_rows($hasil) === 1)
+                                {
+                                    $row = mysqli_fetch_assoc($hasil);
+                                    
+                                    if(password_verify($password, $row["password"]))
+                                    {
+                                        header("location: login.php?username=$username");
+	                                    exit;
+                                    }
+                                }
+                                else
+                                {
+                                    echo "username salah";
+                                }
+                            }
+                        ?>
+                    </td>
                 </tr>
             </table>
+
         </form>
+
     </body>
 </html>
