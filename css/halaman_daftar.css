@@ -5,14 +5,19 @@ body
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+form
+{
+    background-color: white;
+    width: 400px; /*ukuran  lebar kotak form*/
+    height: 400px; /*ukuran panjang kotak form*/
+    margin: auto; /*auto merata tengahkan form*/
+    margin-top: 100px;/*jarak antara atas dengan form*/
+    border-radius: 10px; /*ukuran lengkukan pojokan background*/
+    padding: 20px; /* jarak antara isi konten dengan batas sisi*/
+}
 table
 {
-    background-color: goldenrod;
-    position: fixed;
-    bottom: 50%;
-    left: 40%;
-    color: white;
+    margin: auto;
 }
 h2
 {
