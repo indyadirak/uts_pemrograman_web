@@ -2,8 +2,8 @@
     <?php 
         $nama = $_GET["username"];
         include("conn.php");
-        $data = mysqli_query($connect,"select * from account where username = '$nama'");
-        $array_data = mysqli_fetch_assoc($data); //digunakan untuk mengambil baris hasil sebagai array asosiatif.
+        $proses_data = mysqli_query($connect,"select * from account inner join favorite on account.id_favorite = favorite.id_favorite where username = '$nama'" );
+        $data = mysqli_fetch_assoc($proses_data);//digunakan untuk mengambil baris hasil sebagai array asosiatif.
     ?>
     <head>
         <title>
@@ -15,13 +15,13 @@
 
         </div>
         <div>
-            <table>
+            <table border="1">
                 <tr>
-                    <td rowspan="4" align="center">
-                        <h3>selamat datang, <?php echo $array_data['username'] ?></h3>
+                    <td colspan="4" align="center">
+                        <h3>selamat datang, <?php echo $data['username'] ?></h3>
                     </td>
                 </tr>
-                <>
+                <tr>
                     <td>
                         username
                     </td>
@@ -29,7 +29,80 @@
                         :
                     </td>
                     <td>
-
+                        <?php echo $data['username'] ?>
+                    </td>
+                    <td>
+                        <a href="">ubah</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        terproteksi
+                    </td>
+                    <td>
+                        <a href="">ubah</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        quotes
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        <?php echo $data['quotes'] ?>
+                    </td>
+                    <td>
+                        <a href="">ubah</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        karakter favorite
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        <?php echo $data['favorite'] ?>
+                    </td>
+                    <td>
+                        <a href="">ubah</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        jenis kelamin
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        <?php echo $data['jenis_kelamin'] ?>
+                    </td>
+                    <td>
+                        <a href="">ubah</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        hapus data 
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td colspan="2" align="center">
+                        <button type="button" name="delete">delete</button>
+                        <?php
+                        
+                        ?>
                     </td>
                 </tr>
             </table>

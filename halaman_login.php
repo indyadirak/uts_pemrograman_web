@@ -10,7 +10,7 @@
         </title>
     </head>
     <body>
-        <form method="post" action="profile.php">
+        <form method="post" action="">
             <table cellspacing="10">
                 <tr>
                     <td colspan="3">
