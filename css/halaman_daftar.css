@@ -8,8 +8,13 @@ body
 
 table
 {
-    background-color: grey;
+    background-color: goldenrod;
     position: fixed;
     bottom: 50%;
     left: 40%;
+    color: white;
+}
+h2
+{
+    text-align: center;
 }
