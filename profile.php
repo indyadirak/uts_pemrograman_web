@@ -12,7 +12,8 @@
     </head>
     <body>
         <!-- tambahkan tag form dengan method pos-->
-            <table>
+        <form method="post" action="">
+         <table>
                 <tr>
                     <td colspan="4" align="center">
                         <h3>selamat datang, <?php echo $data['username'] ?></h3>
@@ -29,7 +30,7 @@
                         <?php echo $data['username'] ?>
                     </td>
                     <td>
-                        <a href="">ubah</a>
+                        <a href="perubahan_uername.php?username=<?= $nama?>">ubah</a>
                     </td>
                 </tr>
                 <tr>
@@ -43,7 +44,7 @@
                         terproteksi
                     </td>
                     <td>
-                        <a href="">ubah</a>
+                        <a href="perubahan_password.php?username=<?= $nama?>">ubah</a>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +58,7 @@
                         <?php echo $data['quotes'] ?>
                     </td>
                     <td>
-                        <a href="">ubah</a>
+                        <a href="perubahan_quotes.php?username=<?= $nama?>">ubah</a>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +72,7 @@
                         <?php echo $data['favorite'] ?>
                     </td>
                     <td>
-                        <a href="">ubah</a>
+                        <a href="perubahan_favorite.php?username=<?= $nama?>">ubah</a>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +86,7 @@
                         <?php echo $data['jenis_kelamin'] ?>
                     </td>
                     <td>
-                        <a href="">ubah</a>
+                        <a href="perubahan_jenis_kelamin.php?username=<?= $nama?>">ubah</a>
                     </td>
                 </tr>
                 <tr>
@@ -100,9 +101,7 @@
                         <?php 
                             if(isset($_POST["delete"]))
                             {   
-                                echo "test";
-                                $data_sementara = $data['username'];
-                                mysqli_query($connect, "DELETE FROM account where id = $data_sementara");
+                                mysqli_query($connect, "DELETE FROM account where username = '$nama'");
                                 header("location: index.php");
                                 exit;
                             }
@@ -110,5 +109,6 @@
                     </td>
                 </tr>
             </table>
+        </form>
     </body>
 </html>

@@ -20,18 +20,19 @@
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="username">masukkan username baru</label></td>
+                    <td><label for="password">masukkan password baru</label></td>
                     <td>:</td>
-                    <td><input type="text" name="username_baru" id="username" ></td>
+                    <td><input type="password" name="password_baru" id="password" ></td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center"><button type="submit" name="submit">ubah</button></td>
                     <?php
                         if(isset($_POST["submit"]))
                         {
-                            $username_baru = $_POST["username_baru"];
-                            mysqli_query($connect," update account set username = '$username_baru' where username = '$username'");
-                            header("location: profile.php?username=$username_baru");
+                            $password = $_POST["password_baru"];
+                            $password = password_hash($password, PASSWORD_DEFAULT);
+                            mysqli_query($connect," update account set password = '$password' where username = '$username'");
+                            header("location: profile.php?username=$username");
                             exit;
                         }
                     ?>

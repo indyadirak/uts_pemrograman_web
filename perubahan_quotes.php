@@ -20,18 +20,19 @@
                     <td colspan="3"></td>
                 </tr>
                 <tr>
-                    <td><label for="username">masukkan username baru</label></td>
+                    <td><label for="quotes">masukkan quotes baru</label></td>
                     <td>:</td>
-                    <td><input type="text" name="username_baru" id="username" ></td>
+                    <td><textarea name="quotes" id="quotes" rowspan="2"></textarea></td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center"><button type="submit" name="submit">ubah</button></td>
                     <?php
                         if(isset($_POST["submit"]))
                         {
-                            $username_baru = $_POST["username_baru"];
-                            mysqli_query($connect," update account set username = '$username_baru' where username = '$username'");
-                            header("location: profile.php?username=$username_baru");
+                            $quotes = $_POST["quotes"];
+
+                            mysqli_query($connect," update account set quotes = '$quotes' where username = '$username'");
+                            header("location: profile.php?username=$username");
                             exit;
                         }
                     ?>

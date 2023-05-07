@@ -1,12 +1,11 @@
 body
 {
-    background-image: url(../image/halaman_login/background.jpg);
-    background-position: center;
+    background-color: aqua;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-form
+table
 {
     background-color: white;
     width: 400px; /*ukuran  lebar kotak form*/
@@ -22,7 +21,3 @@ h2
     text-align: center;
 }
 
-table
-{
-    margin: auto;
-}
