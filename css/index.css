@@ -21,7 +21,7 @@
     color: white;
 }
 
-.tombol_404_not_found
+.tombol_login
 {
     position: fixed;
     border-color: white;
@@ -39,7 +39,7 @@
     backdrop-filter: blur(2px);
 }
 
-.tombol_halaman_dalam_tahap_pengembangan
+.tombol_register
 {
     position: fixed;
     border-color: white;

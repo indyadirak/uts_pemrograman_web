@@ -22,13 +22,13 @@
         </div>
 
         <a href="/uts_pemrograman_web/halaman_login.php" >
-            <div class="tombol_404_not_found">
+            <div class="tombol_login">
                 <p>Login account</p>
             </div>
         </a>
         
         <a href="/uts_pemrograman_web/halaman_daftar.php">
-            <div class="tombol_halaman_dalam_tahap_pengembangan">
+            <div class="tombol_register">
                 <p> register account</p>
             </div>
         </a>
