@@ -1,21 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE>
+<html>
+    <link rel="stylesheet" type="text/css" href="/uts_pemrograman_web/css/profile.css">
     <?php 
         $nama = $_GET["username"];
         include("conn.php");
         $proses_data = mysqli_query($connect,"select * from account inner join favorite on account.id_favorite = favorite.id_favorite where username = '$nama'" );
-        $data = mysqli_fetch_assoc($proses_data);//digunakan untuk mengambil baris hasil sebagai array asosiatif.
+        $data = mysqli_fetch_assoc($proses_data); /*digunakan untuk mengambil baris hasil sebagai array asosiatif.*/ 
     ?>
     <head>
-        <title>
-            profile
-        </title>
+        <title> profile</title>
     </head>
-    <body style="background-color: aqua;">
-        <div>
-
-        </div>
-        <div>
-            <table border="1">
+    <body>
+        <!-- tambahkan tag form dengan method pos-->
+            <table>
                 <tr>
                     <td colspan="4" align="center">
                         <h3>selamat datang, <?php echo $data['username'] ?></h3>
@@ -98,14 +95,20 @@
                     <td>
                         :
                     </td>
-                    <td colspan="2" align="center">
-                        <button type="button" name="delete">delete</button>
-                        <?php
-                        
+                    <td colspan="2" align="center"> 
+                        <button type="submit" name="delete" onclick="return confirm('yakin?')">delete</button>
+                        <?php 
+                            if(isset($_POST["delete"]))
+                            {   
+                                echo "test";
+                                $data_sementara = $data['username'];
+                                mysqli_query($connect, "DELETE FROM account where id = $data_sementara");
+                                header("location: index.php");
+                                exit;
+                            }
                         ?>
                     </td>
                 </tr>
             </table>
-        </div>
     </body>
 </html>
